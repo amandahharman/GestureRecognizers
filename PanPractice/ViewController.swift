@@ -16,12 +16,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   var startTransform: CGAffineTransform?
   var deltaAngle: Float = 0
   var prevPoint: CGPoint = CGPoint.zero
-  @IBOutlet var arrowPanRecognizer: UIPanGestureRecognizer!
   var panGestureRecognizer: UIPanGestureRecognizer!
   @IBOutlet weak var straightLabel: UILabel!
-  @IBOutlet var straightLabelPan: UIPanGestureRecognizer!
+  @IBOutlet var straightLabelPanRecognizer: UIPanGestureRecognizer!
   
-  @IBOutlet weak var arrowImage: UIImageView!
   override func viewDidLoad() {
     let label = createOuterLabel()
     circle.addSubview(label)
@@ -29,8 +27,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     panGestureRecognizer.delegate = self
     label.addGestureRecognizer(panGestureRecognizer)
     label.isUserInteractionEnabled = true
-    arrowImage.addGestureRecognizer(arrowPanRecognizer)
-    arrowImage.isUserInteractionEnabled = true
+
   }
   
   func createOuterLabel() -> DGCurvedLabel {
@@ -43,26 +40,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
       curvedLabel.textInside = false
       return curvedLabel
   }
-  
-  @IBAction func arrowPanned(_ sender: UIPanGestureRecognizer) {
-    
+
+  @IBAction func straightLabelPanned(_ sender: UIPanGestureRecognizer) {
     let currentPoint = sender.location(in: self.circle)
     let center = sender.view!.center
     let angle =  atan2f(Float(currentPoint.y) - Float(center.y), Float(currentPoint.x) - Float(center.x)) - atan2f(Float(prevPoint.y) - Float(center.y), Float(prevPoint.x) - Float(center.x))
     prevPoint = sender.location(in: self.circle)
     deltaAngle += angle
-    self.arrowImage.transform = startTransform!.rotated(by: CGFloat(deltaAngle))
-    
-    
-  }
-  @IBAction func straightLabelPanned(_ sender: UIPanGestureRecognizer) {
-    
-    let currentPoint = sender.location(in: self.circle)
-    let center = circle.center
-    let angle =  atan2f(Float(currentPoint.y) - Float(center.y), Float(currentPoint.x) - Float(center.x)) - atan2f(Float(prevPoint.y) - Float(center.y), Float(prevPoint.x) - Float(center.x))
-    prevPoint = sender.location(in: self.circle)
-    deltaAngle += angle
-    self.arrowImage.transform = startTransform!.rotated(by: CGFloat(deltaAngle))
+    self.straightLabel.transform = startTransform!.rotated(by: CGFloat(deltaAngle))
+
   }
   
   func panned(recognizer: UIPanGestureRecognizer) {
@@ -80,12 +66,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   
   func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     
-    if gestureRecognizer == arrowPanRecognizer {
-      startTransform = self.arrowImage.transform
-    } else if gestureRecognizer == self.panGestureRecognizer {
+    if gestureRecognizer == self.panGestureRecognizer {
       startTransform = self.label.transform
     }
-    else if gestureRecognizer == straightLabelPan {
+    else if gestureRecognizer == straightLabelPanRecognizer {
       startTransform = self.straightLabel.transform
     }
     return true

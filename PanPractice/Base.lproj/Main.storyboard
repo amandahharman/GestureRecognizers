@@ -28,51 +28,35 @@
                                     <constraint firstAttribute="width" constant="300" id="RLp-7i-PfE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test a label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paw-io-bIc">
-                                <rect key="frame" x="152" y="205" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test a label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paw-io-bIc">
+                                <rect key="frame" x="144" y="275" width="87" height="20.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="U8p-I0-ivt" appends="YES" id="mkE-Gn-yVI"/>
+                                    <outletCollection property="gestureRecognizers" destination="aeZ-P0-Ded" appends="YES" id="SH0-5U-3rp"/>
                                 </connections>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="b-backarrow" translatesAutoresizingMaskIntoConstraints="NO" id="02A-F3-0TC">
-                                <rect key="frame" x="162" y="262" width="51" height="46"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="aeZ-P0-Ded" appends="YES" id="iPJ-lt-75a"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1vk-SO-wAM"/>
-                            <constraint firstItem="02A-F3-0TC" firstAttribute="centerY" secondItem="wkm-bi-npG" secondAttribute="centerY" id="CaD-Gg-fiX"/>
-                            <constraint firstItem="02A-F3-0TC" firstAttribute="centerX" secondItem="wkm-bi-npG" secondAttribute="centerX" id="HGe-nM-zDn"/>
+                            <constraint firstItem="paw-io-bIc" firstAttribute="centerY" secondItem="wkm-bi-npG" secondAttribute="centerY" id="Jh1-Qo-fz0"/>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="qVG-lH-LYW"/>
+                            <constraint firstItem="paw-io-bIc" firstAttribute="centerX" secondItem="wkm-bi-npG" secondAttribute="centerX" id="z1q-g7-HDf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="arrowImage" destination="02A-F3-0TC" id="trV-p0-eY6"/>
-                        <outlet property="arrowPanRecognizer" destination="aeZ-P0-Ded" id="1LZ-TI-ORZ"/>
                         <outlet property="circle" destination="wkm-bi-npG" id="BhX-Mb-mRn"/>
                         <outlet property="straightLabel" destination="paw-io-bIc" id="vBn-YR-Q7P"/>
-                        <outlet property="straightLabelPan" destination="U8p-I0-ivt" id="Oam-Xh-MXY"/>
+                        <outlet property="straightLabelPanRecognizer" destination="aeZ-P0-Ded" id="cEP-3e-Bwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="U8p-I0-ivt">
-                    <connections>
-                        <action selector="straightLabelPanned:" destination="BYZ-38-t0r" id="axU-TD-aY8"/>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="KP0-9z-1sp"/>
-                    </connections>
-                </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="aeZ-P0-Ded">
                     <connections>
-                        <action selector="arrowPanned:" destination="BYZ-38-t0r" id="fiF-6a-wSe"/>
+                        <action selector="straightLabelPanned:" destination="BYZ-38-t0r" id="9T3-FC-a7z"/>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="apz-va-DIe"/>
                     </connections>
                 </panGestureRecognizer>
@@ -81,7 +65,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="b-backarrow" width="15" height="23"/>
         <image name="blue" width="288" height="288"/>
     </resources>
 </document>
