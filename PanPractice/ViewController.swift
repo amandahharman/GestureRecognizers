@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   override func viewDidLoad() {
     label = createOuterLabel()
     circle.addSubview(label)
-    createRotateGestureRecognizer(targetView: circle)
+    createRotateGestureRecognizer(targetView: label)
     createPinchGestureRecognizer(targetView: label)
   }
   
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     let font = UIFont (name: "Arial" , size: CGFloat(22))
     let stringAttributes = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: font]
     let curvedLabel: DGCurvedLabel = DGCurvedLabel(frame: self.circle.bounds)
-    curvedLabel.attributedText = NSAttributedString(string: "I am testing a label", attributes: stringAttributes)
+    curvedLabel.attributedText = NSAttributedString(string: "I am an interesting label", attributes: stringAttributes)
     curvedLabel.radius = circle.frame.size.width/3
     curvedLabel.rotation = 0
     curvedLabel.textInside = false
@@ -32,13 +32,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     return curvedLabel
   }
   
-  func createRotateGestureRecognizer(targetView:UIImageView) {
+  func createRotateGestureRecognizer(targetView:UILabel) {
     let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
     targetView.addGestureRecognizer(rotateGesture)
     rotateGesture.delegate = self
   }
   
-  func createPinchGestureRecognizer(targetView: DGCurvedLabel) {
+  func createPinchGestureRecognizer(targetView: UILabel) {
     let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.handlePinch(_:)))
     targetView.addGestureRecognizer(pinchGesture)
     pinchGesture.delegate = self
@@ -50,20 +50,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   }
   
   func handlePinch(_ recognizer : UIPinchGestureRecognizer) {
-    let label = recognizer.view as! DGCurvedLabel
+    let label = recognizer.view as! UILabel
     var pinchScale = recognizer.scale
     pinchScale = round(pinchScale * 1000) / 1000.0
     
     
-    if (pinchScale < 1) {
-      if label.font.pointSize > CGFloat(10) {
+    if (pinchScale < 1) && label.font.pointSize > CGFloat(10) {
         label.font = UIFont( name: "arial", size: label.font.pointSize - pinchScale)
-      }
     }
-    else{
-      if label.font.pointSize < CGFloat(64) {
+    else if (pinchScale >= 1) && label.font.pointSize < CGFloat(64) {
         label.font = UIFont( name: "arial", size: label.font.pointSize + pinchScale)
-      }
     }
   }
   
