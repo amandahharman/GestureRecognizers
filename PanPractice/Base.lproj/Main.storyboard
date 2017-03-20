@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,10 +24,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue" translatesAutoresizingMaskIntoConstraints="NO" id="wkm-bi-npG">
-                                <rect key="frame" x="37.5" y="135" width="300" height="300"/>
+                                <rect key="frame" x="24" y="135" width="327" height="327"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="5Cr-F6-DGd"/>
-                                    <constraint firstAttribute="width" constant="300" id="RLp-7i-PfE"/>
+                                    <constraint firstAttribute="width" secondItem="wkm-bi-npG" secondAttribute="height" multiplier="1:1" id="0CY-0T-zKp"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -33,6 +34,8 @@
                         <constraints>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1vk-SO-wAM"/>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="qVG-lH-LYW"/>
+                            <constraint firstItem="wkm-bi-npG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="tcC-E9-1if"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wkm-bi-npG" secondAttribute="trailing" constant="8" id="wwg-Ff-YQF"/>
                         </constraints>
                     </view>
                     <connections>
