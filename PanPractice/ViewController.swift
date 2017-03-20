@@ -14,8 +14,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   
   override func viewDidLoad() {
     let label = createOuterLabel()
-    createRotateGestureRecognizer(targetView: label)
-    view.addSubview(label)
+    circle.addSubview(label)
+    createRotateGestureRecognizer(targetView: circle)
+
   }
   
   func createOuterLabel() -> DGCurvedLabel {
@@ -30,14 +31,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
       return curvedLabel
   }
 
-  func createRotateGestureRecognizer(targetView:DGCurvedLabel) {
+  func createRotateGestureRecognizer(targetView:UIImageView) {
     let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
     targetView.addGestureRecognizer(rotateGesture)
     rotateGesture.delegate = self
   }
   
   func handleRotate(_ recognizer : UIRotationGestureRecognizer) {
-    
     recognizer.view!.transform = recognizer.view!.transform.rotated(by: recognizer.rotation)
     recognizer.rotation = 0
   }
