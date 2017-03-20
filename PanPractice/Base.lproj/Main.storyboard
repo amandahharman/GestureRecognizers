@@ -28,38 +28,18 @@
                                     <constraint firstAttribute="width" constant="300" id="RLp-7i-PfE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test a label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paw-io-bIc">
-                                <rect key="frame" x="144" y="275" width="87" height="20.5"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="aeZ-P0-Ded" appends="YES" id="SH0-5U-3rp"/>
-                                </connections>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1vk-SO-wAM"/>
-                            <constraint firstItem="paw-io-bIc" firstAttribute="centerY" secondItem="wkm-bi-npG" secondAttribute="centerY" id="Jh1-Qo-fz0"/>
                             <constraint firstItem="wkm-bi-npG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="qVG-lH-LYW"/>
-                            <constraint firstItem="paw-io-bIc" firstAttribute="centerX" secondItem="wkm-bi-npG" secondAttribute="centerX" id="z1q-g7-HDf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circle" destination="wkm-bi-npG" id="BhX-Mb-mRn"/>
-                        <outlet property="straightLabel" destination="paw-io-bIc" id="vBn-YR-Q7P"/>
-                        <outlet property="straightLabelPanRecognizer" destination="aeZ-P0-Ded" id="cEP-3e-Bwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="aeZ-P0-Ded">
-                    <connections>
-                        <action selector="straightLabelPanned:" destination="BYZ-38-t0r" id="9T3-FC-a7z"/>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="apz-va-DIe"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
