@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  PanPractice
 //
 //  Created by Amanda Harman on 3/17/17.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
   
   @IBOutlet weak var circle: UIImageView!
   var label: DGCurvedLabel!
+
   
   override func viewDidLoad() {
     label = createOuterLabel()
@@ -32,6 +33,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     return curvedLabel
   }
   
+  
+  //MARK: Gesture Recognizers
   func createRotateGestureRecognizer(targetView:UILabel) {
     let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(self.handleRotate(_:)))
     targetView.addGestureRecognizer(rotateGesture)
@@ -56,13 +59,61 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     if (pinchScale < 1) && label.font.pointSize > CGFloat(10) {
-        label.font = UIFont( name: "arial", size: label.font.pointSize - pinchScale)
+      label.font = UIFont( name: "arial", size: label.font.pointSize - pinchScale)
     }
     else if (pinchScale >= 1) && label.font.pointSize < CGFloat(64) {
-        label.font = UIFont( name: "arial", size: label.font.pointSize + pinchScale)
+      label.font = UIFont( name: "arial", size: label.font.pointSize + pinchScale)
     }
   }
   
+  //MARK: IBActions
+  @IBAction func saveButtonPressed(_ sender: UIButton) {
+    print("Saved!")
+    let coasterDictionary: [String: Any] = ["image": saveImageAsPNG(image: circle.image)!,
+                                            "rotation": label.rotation,
+                                            "fontSize": label.font.pointSize]
+    Coaster.save(withJSONDictionary: coasterDictionary)
+  }
   
+  @IBAction func seeSavedButtonPressed(_ sender: UIButton) {
+
+    performSegue(withIdentifier: "toSavedTable", sender: sender)
+  }
+  
+
+  //MARK: Saving as PNGS
+  func getDocumentsDirectory() -> URL? {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    if let documentsDirectory = paths.first {
+      return documentsDirectory
+    }
+    return nil
+  }
+  
+  /// Saves image as png to document directory. Returns name of image.
+  func saveImageAsPNG(image: UIImage?) -> String? {
+    if let image = image {
+      let imageName = "\(UUID().uuidString).png"
+      let imageURL = getDocumentsDirectory()?.appendingPathComponent(imageName)
+      if let data = UIImagePNGRepresentation(image) {
+        do {
+          try data.write(to: imageURL!)
+        } catch {
+          print("Error saving to URL")
+          return nil
+        }
+      }
+      
+      return imageName
+    }
+    return nil
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toSavedTable" {
+      let destVC: SavedCoasterViewController = segue.destination as! SavedCoasterViewController
+      destVC.coasters = Coaster.fetchAllCoasters() as! [Coaster]?
+    }
+  }
 }
 

@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E02E8DC91E898655001AC933 /* PanPractice.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E0599EE11E8307D2004F6208 /* PanPractice.xcdatamodeld */; };
+		E02E8DCA1E89868B001AC933 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = E0C117D41E7C3DE0008E2273 /* AppDelegate.swift */; };
+		E02E8DCB1E89868B001AC933 /* HomeViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = E0C117D61E7C3DE0008E2273 /* HomeViewController.swift */; };
+		E02E8DCC1E89868B001AC933 /* CoreDataHelper.h in Resources */ = {isa = PBXBuildFile; fileRef = E0599EE81E830983004F6208 /* CoreDataHelper.h */; };
+		E02E8DCD1E89868B001AC933 /* Coaster+CoreDataClass.h in Resources */ = {isa = PBXBuildFile; fileRef = E0599EF41E830B6A004F6208 /* Coaster+CoreDataClass.h */; };
+		E02E8DCE1E89868B001AC933 /* Coaster+CoreDataProperties.h in Resources */ = {isa = PBXBuildFile; fileRef = E0599EF61E830B6A004F6208 /* Coaster+CoreDataProperties.h */; };
+		E02E8DCF1E89868B001AC933 /* Coaster+AppFunctions.h in Resources */ = {isa = PBXBuildFile; fileRef = E0599EFA1E830B93004F6208 /* Coaster+AppFunctions.h */; };
+		E02E8DD01E89868B001AC933 /* DGCurvedLabel.h in Resources */ = {isa = PBXBuildFile; fileRef = E0C117E71E7C3EF7008E2273 /* DGCurvedLabel.h */; };
+		E02E8DD11E8986E2001AC933 /* PanPractice-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = E0C117E61E7C3EF7008E2273 /* PanPractice-Bridging-Header.h */; };
+		E02E8DD31E8988A8001AC933 /* SavedCoasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E8DD21E8988A8001AC933 /* SavedCoasterViewController.swift */; };
+		E0599EEA1E830983004F6208 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0599EE91E830983004F6208 /* CoreDataHelper.m */; };
+		E0599EFD1E830E08004F6208 /* Coaster+AppFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E0599EFC1E830BD5004F6208 /* Coaster+AppFunctions.m */; };
+		E0599EFE1E83111F004F6208 /* Coaster+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E0599EF51E830B6A004F6208 /* Coaster+CoreDataClass.m */; };
+		E0848A6E1E8BF90000DC499D /* SavedCoasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0848A6D1E8BF90000DC499D /* SavedCoasterTableViewCell.swift */; };
+		E0848A731E8BFBEF00DC499D /* Coaster+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E0848A721E8BFBEF00DC499D /* Coaster+CoreDataProperties.m */; };
+		E0848A741E8C163D00DC499D /* SavedCoasterViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = E02E8DD21E8988A8001AC933 /* SavedCoasterViewController.swift */; };
+		E0848A751E8C164300DC499D /* SavedCoasterTableViewCell.swift in Resources */ = {isa = PBXBuildFile; fileRef = E0848A6D1E8BF90000DC499D /* SavedCoasterTableViewCell.swift */; };
 		E0C117D51E7C3DE0008E2273 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C117D41E7C3DE0008E2273 /* AppDelegate.swift */; };
-		E0C117D71E7C3DE0008E2273 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C117D61E7C3DE0008E2273 /* ViewController.swift */; };
+		E0C117D71E7C3DE0008E2273 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C117D61E7C3DE0008E2273 /* HomeViewController.swift */; };
 		E0C117DA1E7C3DE0008E2273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C117D81E7C3DE0008E2273 /* Main.storyboard */; };
 		E0C117DC1E7C3DE0008E2273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C117DB1E7C3DE0008E2273 /* Assets.xcassets */; };
 		E0C117DF1E7C3DE0008E2273 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C117DD1E7C3DE0008E2273 /* LaunchScreen.storyboard */; };
@@ -16,9 +33,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E02E8DD21E8988A8001AC933 /* SavedCoasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCoasterViewController.swift; sourceTree = "<group>"; };
+		E0599EE21E8307D2004F6208 /* PanPractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PanPractice.xcdatamodel; sourceTree = "<group>"; };
+		E0599EE81E830983004F6208 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		E0599EE91E830983004F6208 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		E0599EF41E830B6A004F6208 /* Coaster+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Coaster+CoreDataClass.h"; path = "../Coaster+CoreDataClass.h"; sourceTree = "<group>"; };
+		E0599EF51E830B6A004F6208 /* Coaster+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Coaster+CoreDataClass.m"; path = "../Coaster+CoreDataClass.m"; sourceTree = "<group>"; };
+		E0599EF61E830B6A004F6208 /* Coaster+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Coaster+CoreDataProperties.h"; path = "../Coaster+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E0599EFA1E830B93004F6208 /* Coaster+AppFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coaster+AppFunctions.h"; sourceTree = SOURCE_ROOT; };
+		E0599EFC1E830BD5004F6208 /* Coaster+AppFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Coaster+AppFunctions.m"; path = "PanPractice/Coaster+AppFunctions.m"; sourceTree = SOURCE_ROOT; };
+		E0848A6D1E8BF90000DC499D /* SavedCoasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCoasterTableViewCell.swift; sourceTree = "<group>"; };
+		E0848A721E8BFBEF00DC499D /* Coaster+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Coaster+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E0C117D11E7C3DE0008E2273 /* PanPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C117D41E7C3DE0008E2273 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0C117D61E7C3DE0008E2273 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0C117D61E7C3DE0008E2273 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E0C117D91E7C3DE0008E2273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C117DB1E7C3DE0008E2273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C117DE1E7C3DE0008E2273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0599EEB1E830AEB004F6208 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E0599EE11E8307D2004F6208 /* PanPractice.xcdatamodeld */,
+				E0599EE81E830983004F6208 /* CoreDataHelper.h */,
+				E0599EE91E830983004F6208 /* CoreDataHelper.m */,
+				E0599EF41E830B6A004F6208 /* Coaster+CoreDataClass.h */,
+				E0599EF51E830B6A004F6208 /* Coaster+CoreDataClass.m */,
+				E0599EF61E830B6A004F6208 /* Coaster+CoreDataProperties.h */,
+				E0848A721E8BFBEF00DC499D /* Coaster+CoreDataProperties.m */,
+				E0599EFA1E830B93004F6208 /* Coaster+AppFunctions.h */,
+				E0599EFC1E830BD5004F6208 /* Coaster+AppFunctions.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		E0C117C81E7C3DE0008E2273 = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				E0C117D41E7C3DE0008E2273 /* AppDelegate.swift */,
-				E0C117D61E7C3DE0008E2273 /* ViewController.swift */,
+				E0C117D61E7C3DE0008E2273 /* HomeViewController.swift */,
+				E02E8DD21E8988A8001AC933 /* SavedCoasterViewController.swift */,
+				E0848A6D1E8BF90000DC499D /* SavedCoasterTableViewCell.swift */,
+				E0599EEB1E830AEB004F6208 /* CoreData */,
 				E0C117E71E7C3EF7008E2273 /* DGCurvedLabel.h */,
 				E0C117E81E7C3EF7008E2273 /* DGCurvedLabel.m */,
 				E0C117D81E7C3DE0008E2273 /* Main.storyboard */,
@@ -132,6 +179,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0848A751E8C164300DC499D /* SavedCoasterTableViewCell.swift in Resources */,
+				E0848A741E8C163D00DC499D /* SavedCoasterViewController.swift in Resources */,
+				E02E8DD11E8986E2001AC933 /* PanPractice-Bridging-Header.h in Resources */,
+				E02E8DCA1E89868B001AC933 /* AppDelegate.swift in Resources */,
+				E02E8DCB1E89868B001AC933 /* HomeViewController.swift in Resources */,
+				E02E8DCC1E89868B001AC933 /* CoreDataHelper.h in Resources */,
+				E02E8DCD1E89868B001AC933 /* Coaster+CoreDataClass.h in Resources */,
+				E02E8DCE1E89868B001AC933 /* Coaster+CoreDataProperties.h in Resources */,
+				E02E8DCF1E89868B001AC933 /* Coaster+AppFunctions.h in Resources */,
+				E02E8DD01E89868B001AC933 /* DGCurvedLabel.h in Resources */,
+				E02E8DC91E898655001AC933 /* PanPractice.xcdatamodeld in Resources */,
 				E0C117DF1E7C3DE0008E2273 /* LaunchScreen.storyboard in Resources */,
 				E0C117DC1E7C3DE0008E2273 /* Assets.xcassets in Resources */,
 				E0C117DA1E7C3DE0008E2273 /* Main.storyboard in Resources */,
@@ -145,9 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C117D71E7C3DE0008E2273 /* ViewController.swift in Sources */,
+				E0599EFE1E83111F004F6208 /* Coaster+CoreDataClass.m in Sources */,
+				E0848A731E8BFBEF00DC499D /* Coaster+CoreDataProperties.m in Sources */,
+				E0C117D71E7C3DE0008E2273 /* HomeViewController.swift in Sources */,
 				E0C117E91E7C3EF7008E2273 /* DGCurvedLabel.m in Sources */,
+				E0848A6E1E8BF90000DC499D /* SavedCoasterTableViewCell.swift in Sources */,
 				E0C117D51E7C3DE0008E2273 /* AppDelegate.swift in Sources */,
+				E02E8DD31E8988A8001AC933 /* SavedCoasterViewController.swift in Sources */,
+				E0599EEA1E830983004F6208 /* CoreDataHelper.m in Sources */,
+				E0599EFD1E830E08004F6208 /* Coaster+AppFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +380,22 @@
 				E0C117E51E7C3DE0008E2273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0599EE11E8307D2004F6208 /* PanPractice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0599EE21E8307D2004F6208 /* PanPractice.xcdatamodel */,
+			);
+			currentVersion = E0599EE21E8307D2004F6208 /* PanPractice.xcdatamodel */;
+			path = PanPractice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E0C117C91E7C3DE0008E2273 /* Project object */;
 }
